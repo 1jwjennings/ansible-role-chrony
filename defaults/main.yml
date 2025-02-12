@@ -1,2 +1,293 @@
 ---
-# defaults file for chrony
+chrony_package: chrony
+chrony_service: chronyd
+chrony_pools:
+  2.centos.pool.ntp.org:
+    iburst: yes
+  #   burst: no
+  #   key: <ID>
+  #   minpoll: <polls>
+  #   maxpoll: <polls>
+  #   nts: no
+  #   certset: <ID>
+  #   maxdelay: <delay>
+  #   maxdelayratio: <delay>
+  #   maxdelaydevratio: <ratio>
+  #   maxdelayquant: <p>
+  #   mindelay: <delay>
+  #   asymmetry: <ratio>
+  #   offset: <offset>
+  #   minsamples: <samples>
+  #   maxsamples: <samples>
+  #   filter: <polls>
+  #   offline: no
+  #   auto_offline: no
+  #   prefer: no
+  #   noselect: no
+  #   trust: no
+  #   require: no
+  #   xleave: no
+  #   polltarget: <target>
+  #   port: <port>
+  #   ntsport: <port>
+  #   presend: <poll>
+  #   minstratum: <stratum>
+  #   version: <version>
+  #   copy: no
+  #   extfield: <type>
+  #   ipv4: no
+  #   ipv6: no
+  #   maxsources: <sources>
+chrony_sourcedirs:
+  - /run/chrony-dhcp
+chrony_driftfile: /var/lib/chrony/drift
+chrony_makestep:
+  threshold: 0.1
+  limit: 3
+chrony_rtcsync: yes
+chrony_local:
+  stratum: 10
+  # distance: <distance>
+  # activate: <distance>
+  # orphan: no
+chrony_keyfile: /etc/chrony.keys
+chrony_ntsdumpdir: /var/lib/chrony
+chrony_leapsectz: right/UTC
+chrony_logdir: /var/log/chrony
+chrony_log:
+  - measurements
+  - statistics
+  - tracking
+  # - rawmeasurements
+  # - selection
+  # - rtc
+  # - refclocks
+  # - tempcomp
+# chrony_servers:
+#   example.ntp.server:
+#     burst: no
+#     iburst: no
+#     key: <ID>
+#     minpoll: 6
+#     maxpoll: 10
+#     nts: no
+#     certset: 0
+#     maxdelay: 3
+#     maxdelayratio: <delay>
+#     maxdelaydevratio: <ratio>
+#     maxdelayquant: <p>
+#     mindelay: <delay>
+#     asymmetry: <ratio>
+#     offset: <offset>
+#     minsamples: <samples>
+#     maxsamples: <samples>
+#     filter: <polls>
+#     offline: no
+#     auto_offline: no
+#     prefer: no
+#     noselect: no
+#     trust: no
+#     require: no
+#     xleave: no
+#     polltarget: <target>
+#     port: 123
+#     ntsport: 4460
+#     presend: <poll>
+#     minstratum: <stratum>
+#     version: <version>
+#     copy: no
+#     extfield: <type>
+#     ipv4: yes
+#     ipv6: yes
+# chrony_peers:
+#   example.ntp.peer:
+#     key: <ID>
+#     minpoll: 6
+#     maxpoll: 10
+#     certset: 0
+#     maxdelay: 3
+#     maxdelayratio: <delay>
+#     maxdelaydevratio: <ratio>
+#     maxdelayquant: <p>
+#     mindelay: <delay>
+#     asymmetry: <ratio>
+#     offset: <offset>
+#     minsamples: <samples>
+#     maxsamples: <samples>
+#     filter: <polls>
+#     offline: no
+#     auto_offline: no
+#     prefer: no
+#     noselect: no
+#     trust: no
+#     require: no
+#     xleave: no
+#     polltarget: <target>
+#     port: 123
+#     ntsport: 4460
+#     minstratum: <stratum>
+#     version: <version>
+#     extfield: <type>
+#     ipv4: yes
+#     ipv6: yes
+# chrony_initstepslew: # DEPRECATED IN CHRONY
+#   threshold: <step-threshold>
+#   hosts: []
+# chrony_refclocks:
+#   - driver: <PPS|SOCK|SHM|PHC>
+#     clear: no # exclusive to PPS & PHC
+#     perm: <mode> # exclusive to SHM
+#     nocrossts: no # exclusive to PHC
+#     extpps: no # exclusive to PHC
+#     pin: <index> # exclusive to PHC
+#     channel: <index> # exclusive to PHC
+#     poll: <poll>
+#     dpoll: <dpoll>
+#     refid: <refid>
+#     lock: <refid>
+#     rate: <rate>
+#     maxlockage: <pulses>
+#     width: <width>
+#     pps: no
+#     offset: <offset>
+#     delay: <delay>
+#     stratum: <stratum>
+#     precision: <precision>
+#     maxdispersion: <dispersion>
+#     filter: <samples>
+#     prefer: no
+#     noselect: no
+#     trust: no
+#     require: no
+#     tai: no
+#     local: no
+#     minsamples: <samples>
+#     maxsamples: <samples>
+# chrony_manual: no
+# chrony_acquisitionport: <port>
+# chrony_bindacqaddress: <address>
+# chrony_bindacqdevice: <interface>
+# chrony_dscp: <point>
+# chrony_dumpdir: <directory>
+# chrony_maxsamples: <samples>
+# chrony_minsamples: <samples>
+# chrony_ntsaeads: <ID>
+# chrony_ntsrefresh: <interval>
+# chrony_ntstrustedcerts:
+#   - id: <set-ID>
+#     path: <file or directory>
+# chrony_nosystemcert: no
+# chrony_nocerttimecheck: <limit>
+# chrony_refresh: <interval>
+# chrony_authselectmode: <mode>
+# chrony_combinelimit: <limit>
+# chrony_maxdistance: <distance>
+# chrony_maxjitter: <jitter>
+# chrony_minsources: <sources>
+# chrony_reselectdist: <distance>
+# chrony_stratumweight: <distance>
+# chrony_clockprecision: <precision>
+# chrony_corrtimeratio: <ratio>
+# chrony_fallbackdrift:
+#   min: <min-interval>
+#   max: <max-interval>
+# chrony_leapsecmode: <mode>
+# chrony_leapseclist: <filepath>
+# chrony_maxchange:
+#   offset: <offset>
+#   start: <start>
+#   ignore: <ignore>
+# chrony_maxclockerror: <error in ppm>
+# chrony_maxdrift: <drift in ppm>
+# chrony_maxupdateskew: <skew in ppm>
+# chrony_maxslewrate: <rate in ppm>
+# chrony_tempcomp:
+#   file: <filepath>
+#   interval: <interval>
+#   points_file: <filepath>
+#   T0: <T0>
+#   k0: <k0>
+#   k1: <k1>
+#   k2: <k2>
+# chrony_allow:
+#   - all
+#   - <IP address>
+#   - <Subnet>
+# chrony_deny:
+#   - all
+#   - <IP address>
+#   - <Subnet>
+# chrony_bindaddress: <IP address>
+# chrony_binddevice: <interface>
+# chrony_broadcast:
+#   interval: <interval>
+#   address: <address>
+#   port: <port>
+# chrony_clientloglimit: <limit>
+# chrony_noclientlog: no
+# chrony_ntpsigndsocket: <directory>
+# chrony_ntsport: <port>
+# chrony_ntsservercert: <filepath>
+# chrony_ntsserverkey: <firepath>
+# chrony_ntsprocesses: <processes>
+# chrony_maxntsconnections: <connections>
+# chrony_ntsntpserver: <hostname>
+# chrony_ntsrotate: <interval>
+# chrony_port: <port>
+# chrony_ratelimit:
+#   interval: <interval>
+#   burst: <responses>
+#   leak: <rate>
+#   kod: <rate>
+# chrony_ntsratelimit:
+#   interval: <interval>
+#   burst: <responses>
+#   leak: <rate>
+# chrony_smoothtime:
+#   frequency: <max frequency>
+#   wander: <max wander>
+#   leaponly: no
+# chrony_bindcmdaddress: <address>
+# chrony_bindcmddevice: <interface>
+# chrony_cmdallow:
+#   - all
+#   - <IP address>
+#   - <subnet>
+# chrony_cmdport: <port>
+# chrony_cmdratelimit:
+#   interval: <interval>
+#   burst: <responses>
+#   leak: <rate>
+# chrony_hwclockfile: <filepath>
+# chrony_rtcautotrim: <threshold>
+# chrony_rtcdevice: <device>
+# chrony_rtcfile: <filepath>
+# chrony_rtconutc: no
+# chrony_logbanner: <entries>
+# chrony_logchange: <threshold>
+# chrony_mailonchange:
+#   email: <email>
+#   threshold: <threshold>
+# chrony_confdirs:
+#   - <directory>
+# chrony_includes:
+#   - <filepath>
+# chrony_hwtimestamp:
+#   '*': {}
+#   <interface>:
+#     minpoll: <poll>
+#     maxpoll: <poll>
+#     minsamples: <samples>
+#     maxsamples: <samples>
+#     precision: <precision>
+#     txcomp: <compensation>
+#     rxcomp: <compensation>
+#     nocrossts: no
+#     rxfilter: <filter>
+# chrony_hwtstimeout: <timeout>
+# chrony_lock_all: no
+# chrony_pidfile: <filepath>
+# chrony_ptpport: <port>
+# chrony_ptpdomain: <domain>
+# chrony_sched_priority: <priority>
+# chrony_user: <user>
