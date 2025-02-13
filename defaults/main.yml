@@ -64,7 +64,7 @@ chrony_log:
   # - rtc
   # - refclocks
   # - tempcomp
-# chrony_servers:
+chrony_servers: []
 #   example.ntp.server:
 #     burst: no
 #     iburst: no
@@ -100,7 +100,7 @@ chrony_log:
 #     extfield: <type>
 #     ipv4: yes
 #     ipv6: yes
-# chrony_peers:
+chrony_peers: []
 #   example.ntp.peer:
 #     key: <ID>
 #     minpoll: 6

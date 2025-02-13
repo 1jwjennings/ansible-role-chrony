@@ -1,2 +1,8 @@
 ---
-# tasks file for chrony
+- name: Template
+  ansible.builtin.template:
+    src: chrony.conf.j2
+    dest: /home/gm/chrony.conf
+    owner: gm
+    group: gm
+    mode: u=rw,g=r,o=r
