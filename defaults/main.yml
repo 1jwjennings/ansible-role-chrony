@@ -2,8 +2,9 @@
 chrony_package: chrony
 chrony_service: chronyd
 chrony_pools:
-  2.centos.pool.ntp.org:
+  - name: 2.centos.pool.ntp.org
     iburst: yes
+    minpoll: 3
   #   burst: no
   #   key: <ID>
   #   minpoll: <polls>

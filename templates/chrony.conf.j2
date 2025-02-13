@@ -1,0 +1,3 @@
+{% for pool in chrony_pools %}
+pool {{ pool.name }}{% for option in pool|difference('name') %}{% if pool[option] != False %} {{ option }}{% if pool[option] != True %} {{ pool[option] }}{% endif %}{% endif %}{% endfor %}
+{% endfor %}
